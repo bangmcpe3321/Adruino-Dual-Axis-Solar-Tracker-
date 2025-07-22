@@ -23,13 +23,18 @@ This project implements a dual-axis solar tracker using an Arduino. It automatic
 
 ## Software & Libraries
 
-The Arduino sketch requires the following libraries. You can install them through the Arduino IDE's Library Manager (`Sketch > Include Library > Manage Libraries...`).
+### Arduino
+The sketch requires the following libraries. You can install them through the Arduino IDE's Library Manager (`Sketch > Include Library > Manage Libraries...`).
 
 - `<Servo.h>` (Usually included with the Arduino IDE)
 - `<SoftwareSerial.h>` (Usually included with the Arduino IDE)
 - `<Wire.h>` (Usually included with the Arduino IDE)
 - `Adafruit BME280 Library` by Adafruit
 - `Adafruit Unified Sensor` by Adafruit
+
+### Android
+
+The project includes an Android application (`adr.apk`) for controlling the tracker and receiving data.
 
 ## Wiring & Connections
 
@@ -44,7 +49,7 @@ The Arduino sketch requires the following libraries. You can install them throug
 | BME280 SDA          | Pin A4 (SDA)     |
 | BME280 SCL          | Pin A5 (SCL)     |
 
-*Note: Remember to connect the power (VCC) and ground (GND) for all components appropriately. The BME280 sensor address used in the code is `0x76`.*
+*Note: This project uses the HC-06 Bluetooth module. Remember to connect the power (VCC) and ground (GND) for all components appropriately. The BME280 sensor address used in the code is `0x76`.*
 
 ## How It Works
 
@@ -62,7 +67,8 @@ The tracker listens for commands sent over Bluetooth:
 1.  **Assemble the Hardware:** Connect all the components according to the wiring table above.
 2.  **Install Libraries:** Open the Arduino IDE and install the required libraries listed under the "Software & Libraries" section.
 3.  **Upload the Sketch:** Open the `BlueCon.ino` file in the Arduino IDE, select your board and port, and upload the code.
-4.  **Connect via App:** Power the circuit. Use your Android application to scan for and connect to the Bluetooth module.
+4.  **Install the Android App:** Transfer the `adr.apk` file to your Android device and install it. You may need to enable installation from unknown sources in your device settings.
+5.  **Connect via App:** Power the circuit. Open the app on your phone, scan for the HC-06 Bluetooth module, and connect to it.
 
 ## Usage
 
